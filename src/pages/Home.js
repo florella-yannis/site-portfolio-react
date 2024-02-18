@@ -3,6 +3,7 @@ import Navigation from '../components/Navigation';
 import Mouse from '../components/Mouse';
 import SocialNetwork from '../components/SocialNetwork';
 import DynamicText from '../components/DynamicText';
+import Buttons from '../components/Buttons';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
                         <h2><DynamicText /></h2>
                     </div>
                 </div>
+                <Buttons right={ } />
             </div>
         </div>
 
