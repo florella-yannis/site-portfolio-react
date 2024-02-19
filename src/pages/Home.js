@@ -18,7 +18,7 @@ const Home = () => {
                         <h2><DynamicText /></h2>
                     </div>
                 </div>
-                <Buttons right={ } />
+                {/* <Buttons right="projects/1" /> */}
             </div>
         </div>
 

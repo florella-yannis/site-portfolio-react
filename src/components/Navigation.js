@@ -13,7 +13,7 @@ const Navigation = () => {
                     portfolio
                     <ul className="nav-projects">
                         {projectsData.map((project) => (
-                            <NavLink key={project.id} to={`/project/${project.id}`} className={(nav) => (nav.isActive ? "nav-active hover" : "hover")} >
+                            <NavLink key={project.id} to={`/projects/${project.id}`} className={(nav) => (nav.isActive ? "nav-active hover" : "hover")} >
                                 <li>Project-{project.id}</li>
                             </NavLink>
                         ))}
