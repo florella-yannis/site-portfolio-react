@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import Mouse from '../components/Mouse';
@@ -8,6 +8,20 @@ import Buttons from '../components/Buttons';
 
 
 const Project = () => {
+
+    //random circle
+    const [left, setLeft] = useState();
+    const [top, setTop] = useState();
+    const [size, setSize] = useState();
+
+    useEffect(() => {
+
+        setLeft(Math.floor(Math.random() * 200 + 700) + "px");
+        setTop(Math.floor(Math.random() * 200 + 150) + "px");
+        setSize("scale(" + (Math.random() + 0.7) + ")");
+
+    }, []);
+
 
     const { projectId } = useParams();
     // console.log(projectId);
@@ -47,8 +61,10 @@ const Project = () => {
                             </a>
                         </div>
                     </div>
+                    {/* <Buttons left={`/projects/${parseInt(projectId) - 1}`} right={`/projects/${parseInt(projectId) + 1}`} /> */}
+
                 </div>
-                <Buttons />
+                <span className="random-circle" style={{ left, top, transform: size }}></span>
             </div>
         </main>
 
