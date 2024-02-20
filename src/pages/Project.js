@@ -31,6 +31,14 @@ const Project = () => {
         return <h2>Projet non trouvé</h2>;
     }
 
+    // mise en place du button 
+    // Trouver l'index du projet actuel dans le tableau des projets
+    const currentIndex = projectsData.findIndex(p => p.id === parseInt(projectId));
+
+    // Calculer les IDs des projets précédent et suivant
+    const previousProjectId = currentIndex > 0 ? projectsData[currentIndex - 1].id : null;
+    const nextProjectId = currentIndex < projectsData.length - 1 ? projectsData[currentIndex + 1].id : null;
+
     return (
         <main>
             <Mouse />
@@ -61,7 +69,10 @@ const Project = () => {
                             </a>
                         </div>
                     </div>
-                    {/* <Buttons left={`/projects/${parseInt(projectId) - 1}`} right={`/projects/${parseInt(projectId) + 1}`} /> */}
+                    <Buttons
+                        left={previousProjectId ? `/projects/${previousProjectId}` : "/"}
+                        right={nextProjectId ? `/projects/${nextProjectId}` : "/contact"}
+                    />
 
                 </div>
                 <span className="random-circle" style={{ left, top, transform: size }}></span>

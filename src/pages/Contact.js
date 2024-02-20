@@ -5,8 +5,13 @@ import Logo from '../components/Logo';
 import ContactForm from '../components/ContactForm';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import SocialNetwork from '../components/SocialNetwork';
+import { projectsData } from '../data/projectsData';
+import Buttons from '../components/Buttons';
 
 const Contact = () => {
+
+    const lastProjectId = projectsData.length > 0 ? projectsData[projectsData.length - 1].id : null;
+
     return (
         <main>
             <Mouse />
@@ -40,9 +45,10 @@ const Contact = () => {
                     </div>
                     <SocialNetwork />
                     <div className="credits">
-                        <p>Yannis Dev & From Scratch- 2024</p>
+                        <p>Yannis Dev - 2024</p>
                     </div>
                 </div>
+                <Buttons left={lastProjectId ? `/projects/${lastProjectId}` : null} />
             </div>
         </main>
     );

@@ -4,8 +4,12 @@ import Mouse from '../components/Mouse';
 import SocialNetwork from '../components/SocialNetwork';
 import DynamicText from '../components/DynamicText';
 import Buttons from '../components/Buttons';
+import { projectsData } from '../data/projectsData';
 
 const Home = () => {
+
+    const firstProjectId = projectsData.length > 0 ? projectsData[0].id : null;
+
     return (
         <div>
             <Mouse />
@@ -18,7 +22,7 @@ const Home = () => {
                         <h2><DynamicText /></h2>
                     </div>
                 </div>
-                {/* <Buttons right="projects/1" /> */}
+                <Buttons right={firstProjectId ? `/projects/${firstProjectId}` : "/contact"} />
             </div>
         </div>
 
